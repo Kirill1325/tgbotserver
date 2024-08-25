@@ -18,11 +18,11 @@ bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text
 
-    if (text === 'bb') {
+    if (text === '/start') {
         await bot.sendMessage(chatId, 'Hello', {
             reply_markup: {
                 inline_keyboard: [
-                    [{ text: 'Yes', web_app: { url: url } }],
+                    [{ text: 'Open App', web_app: { url: url } }],
                 ]
             }
         })
@@ -31,7 +31,7 @@ bot.on('message', async (msg) => {
 
 const port = process.env.PORT || 3000
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
     res.send('Hello World!')
 })
 
